@@ -27,8 +27,9 @@ public abstract class Insurance {
         return monthlyCost;
     }
 
-    // abstrct method
+    // abstract method
     public abstract void setInsuranceCost (double cost);
     public abstract String displayInfo ();
+
 
 }
