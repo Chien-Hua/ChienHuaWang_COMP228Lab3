@@ -1,7 +1,10 @@
 package exercise1;
 
 public class Life extends Insurance {
-    double monthlyCost;
+
+    public Life(String insuranceType, double monthlyCost) {
+        super(insuranceType, monthlyCost);
+    }
 
     @Override
     public void setInsuranceCost(double cost) {
@@ -11,7 +14,7 @@ public class Life extends Insurance {
     @Override
     public String displayInfo() {
 
-        return String.format("Insurance type: %s %nMonthly cost: $%.2f", "Life",monthlyCost);
+        return String.format("Insurance type: %s - %s %nMonthly cost: $%.2f%n", "Life",getInsuranceType(),getMonthlyCost());
     }
 }
 
