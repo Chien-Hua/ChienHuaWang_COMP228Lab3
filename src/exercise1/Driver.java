@@ -1,5 +1,6 @@
 package exercise1;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Driver {
@@ -34,7 +35,8 @@ public class Driver {
         }
 // displaying insurane polymorphic
         for (Insurance i: insurance1){
-            System.out.println(i.displayInfo());
+            JOptionPane.showMessageDialog(null,i.displayInfo());
+            //System.out.println(i.displayInfo());
 
         }
 

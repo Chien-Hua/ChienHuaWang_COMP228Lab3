@@ -1,5 +1,6 @@
 package exercise2;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 public class StudentDriver {
@@ -21,7 +22,8 @@ public class StudentDriver {
             double creditHour = scanner.nextDouble();
             a = new PartTimeStudent(first,last,creditHour);
         }
-        System.out.printf("First name: %s,Last name: %s, tuition: $%.2f", a.getfName(), a.getlName(), a.calculateTuition());
+        String message =  String.format("First name: %s,Last name: %s, tuition: $%.2f", a.getfName(), a.getlName(), a.calculateTuition());
+        JOptionPane.showMessageDialog(null,message);
 
     }
 }

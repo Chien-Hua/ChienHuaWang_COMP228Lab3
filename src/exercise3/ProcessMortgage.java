@@ -3,6 +3,7 @@ package exercise3;
  Then in a loop prompts the user for a mortgage type and all relevant information for that mortgage.
 Store the created Mortgage objects in the array. When data entry is complete, display all mortgages.
  */
+import javax.swing.*;
 import java.util.Scanner;
 public class ProcessMortgage {
 
@@ -28,7 +29,8 @@ public class ProcessMortgage {
                 System.out.println(mortgage1[i].getMortgageInfo());
             } else{
                 mortgage1[i] = new BusinessMortgage(number,name,amount,rate,term);
-                System.out.println(mortgage1[i].getMortgageInfo());
+                JOptionPane.showMessageDialog(null,mortgage1[i].getMortgageInfo());
+                //System.out.println(mortgage1[i].getMortgageInfo());
             }
         }
     }
