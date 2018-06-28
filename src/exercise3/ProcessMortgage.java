@@ -8,10 +8,12 @@ import java.util.Scanner;
 public class ProcessMortgage {
 
     public static void main(String[] args) {
+      
         Scanner input = new Scanner(System.in);
         Mortgage[] mortgage1 = new Mortgage[3];
-        System.out.print("Please enter the current rate: ");
+        System.out.print("Please enter the current rate in decimal (0-0.2): ");
         double rate = Double.parseDouble(input.next()); // save use's input
+
         for (int i = 0; i < 3; i++) {
             System.out.print("Please enter the type of mortgage 'personal' or 'business': ");// prompt
             String type = input.next(); // save use's input
@@ -20,18 +22,25 @@ public class ProcessMortgage {
             System.out.print("Please enter your name: ");// prompt
             String name = input.next(); // save use's input
             System.out.print("Please enter your amount of mortgage: ");// prompt
-            double amount =Double.parseDouble(input.next()) ; // save use's input
+            double amount = Double.parseDouble(input.next()); // save use's input
             System.out.print("Please enter your term '1', '3', '5': ");// prompt
             int term = Integer.parseInt(input.next()); // save use's input
-            if (type.equalsIgnoreCase("personal")){
-                 mortgage1[i] = new PersonalMortgage(number,name,amount,rate,term);
+            if (type.equalsIgnoreCase("personal")) {
+                mortgage1[i] = new PersonalMortgage(number, name, amount, rate, term);
 
-                System.out.println(mortgage1[i].getMortgageInfo());
-            } else{
-                mortgage1[i] = new BusinessMortgage(number,name,amount,rate,term);
-                JOptionPane.showMessageDialog(null,mortgage1[i].getMortgageInfo());
+                //System.out.println(mortgage1[i].getMortgageInfo());
+            } else {
+                mortgage1[i] = new BusinessMortgage(number, name, amount, rate, term);
+                //JOptionPane.showMessageDialog(null,mortgage1[i].getMortgageInfo());
                 //System.out.println(mortgage1[i].getMortgageInfo());
             }
         }
+
+        for (Mortgage m : mortgage1) {
+            JOptionPane.showMessageDialog(null, m.getMortgageInfo());
+            System.out.println(m.getMortgageInfo());
+        }
+
+
     }
 }

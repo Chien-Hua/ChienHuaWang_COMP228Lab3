@@ -61,6 +61,10 @@ public abstract class Mortgage implements MortgageConstants {
             term = SHORT_TERM_YEAR;
         }
 
+        if (interestRate < 0 || interestRate > 0.2) {
+            throw new IllegalArgumentException("Interest Rate must be between 0 and 20%");
+        }
+
         this.mortgageNum = mortgageNum;
         this.customerName = customerName;
         this.amountOfMortgage = amountOfMortgage;

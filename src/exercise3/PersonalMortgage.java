@@ -4,11 +4,7 @@ package exercise3;
 public class PersonalMortgage extends Mortgage {
 
     public PersonalMortgage(String mortgageNum, String customerName, double amountOfMortgage, double interestRate, int term) {
-        super(mortgageNum, customerName, amountOfMortgage, interestRate, term);
-
-        if (interestRate > 0.02){
-            throw new IllegalArgumentException(" Interest Rate must be <= 0.02");
-        }
+        super(mortgageNum, customerName, amountOfMortgage, interestRate + 0.02, term);
     }
 
 }
